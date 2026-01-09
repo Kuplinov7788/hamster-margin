@@ -1,45 +1,163 @@
-import React, { useState } from 'react';
-import { Zap, TrendingUp, Users, Target, Trophy, Coins, ChevronRight, Star } from 'lucide-react';
+import React, { useState } from "react";
+import {
+  Zap,
+  TrendingUp,
+  Users,
+  Target,
+  Trophy,
+  Coins,
+  ChevronRight,
+  Star,
+} from "lucide-react";
 
 export default function App() {
-  const [activeTab, setActiveTab] = useState('main');
-  const [selectedCategory, setSelectedCategory] = useState('business');
+  const [activeTab, setActiveTab] = useState("main");
+  const [selectedCategory, setSelectedCategory] = useState("business");
 
   const upgrades = {
     business: [
-      { id: 1, name: 'Crypto Exchange', level: 3, cost: 2500, profit: '+450/h', icon: '💱' },
-      { id: 2, name: 'Mining Farm', level: 5, cost: 5000, profit: '+890/h', icon: '⛏️' },
-      { id: 3, name: 'NFT Gallery', level: 1, cost: 1200, profit: '+200/h', icon: '🖼️' },
-      { id: 4, name: 'DeFi Protocol', level: 0, cost: 800, profit: '+150/h', icon: '🏦' },
-      { id: 5, name: 'DAO Community', level: 2, cost: 3000, profit: '+520/h', icon: '🤝' },
+      {
+        id: 1,
+        name: "Crypto Exchange",
+        level: 3,
+        cost: 2500,
+        profit: "+450/h",
+        icon: "💱",
+      },
+      {
+        id: 2,
+        name: "Mining Farm",
+        level: 5,
+        cost: 5000,
+        profit: "+890/h",
+        icon: "⛏️",
+      },
+      {
+        id: 3,
+        name: "NFT Gallery",
+        level: 1,
+        cost: 1200,
+        profit: "+200/h",
+        icon: "🖼️",
+      },
+      {
+        id: 4,
+        name: "DeFi Protocol",
+        level: 0,
+        cost: 800,
+        profit: "+150/h",
+        icon: "🏦",
+      },
+      {
+        id: 5,
+        name: "DAO Community",
+        level: 2,
+        cost: 3000,
+        profit: "+520/h",
+        icon: "🤝",
+      },
     ],
     special: [
-      { id: 6, name: 'Hamster CEO', level: 1, cost: 10000, profit: '+2000/h', icon: '👔' },
-      { id: 7, name: 'Rocket Launch', level: 0, cost: 15000, profit: '+3500/h', icon: '🚀' },
-      { id: 8, name: 'Diamond Paws', level: 2, cost: 8000, profit: '+1500/h', icon: '💎' },
+      {
+        id: 6,
+        name: "Hamster CEO",
+        level: 1,
+        cost: 10000,
+        profit: "+2000/h",
+        icon: "👔",
+      },
+      {
+        id: 7,
+        name: "Rocket Launch",
+        level: 0,
+        cost: 15000,
+        profit: "+3500/h",
+        icon: "🚀",
+      },
+      {
+        id: 8,
+        name: "Diamond Paws",
+        level: 2,
+        cost: 8000,
+        profit: "+1500/h",
+        icon: "💎",
+      },
     ],
     team: [
-      { id: 9, name: 'Marketing Team', level: 4, cost: 4000, profit: '+700/h', icon: '📢' },
-      { id: 10, name: 'Dev Squad', level: 3, cost: 6000, profit: '+950/h', icon: '💻' },
-      { id: 11, name: 'Support Crew', level: 2, cost: 2000, profit: '+350/h', icon: '🎧' },
-    ]
+      {
+        id: 9,
+        name: "Marketing Team",
+        level: 4,
+        cost: 4000,
+        profit: "+700/h",
+        icon: "📢",
+      },
+      {
+        id: 10,
+        name: "Dev Squad",
+        level: 3,
+        cost: 6000,
+        profit: "+950/h",
+        icon: "💻",
+      },
+      {
+        id: 11,
+        name: "Support Crew",
+        level: 2,
+        cost: 2000,
+        profit: "+350/h",
+        icon: "🎧",
+      },
+    ],
   };
 
   const buffs = [
-    { id: 1, name: 'Turbo Mode', duration: '3h', multiplier: 'x2', cost: 1000, active: true, icon: '⚡' },
-    { id: 2, name: 'Lucky Strike', duration: '6h', multiplier: 'x1.5', cost: 1500, active: false, icon: '🍀' },
-    { id: 3, name: 'Mega Boost', duration: '1h', multiplier: 'x5', cost: 3000, active: false, icon: '🔥' },
-    { id: 4, name: 'Auto Clicker', duration: '12h', multiplier: 'Auto', cost: 2500, active: false, icon: '🤖' },
+    {
+      id: 1,
+      name: "Turbo Mode",
+      duration: "3h",
+      multiplier: "x2",
+      cost: 1000,
+      active: true,
+      icon: "⚡",
+    },
+    {
+      id: 2,
+      name: "Lucky Strike",
+      duration: "6h",
+      multiplier: "x1.5",
+      cost: 1500,
+      active: false,
+      icon: "🍀",
+    },
+    {
+      id: 3,
+      name: "Mega Boost",
+      duration: "1h",
+      multiplier: "x5",
+      cost: 3000,
+      active: false,
+      icon: "🔥",
+    },
+    {
+      id: 4,
+      name: "Auto Clicker",
+      duration: "12h",
+      multiplier: "Auto",
+      cost: 2500,
+      active: false,
+      icon: "🤖",
+    },
   ];
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-800 via-gray-900 to-black text-white">
-      a
+      {/* Header */}
       <div className="bg-gradient-to-r from-gray-700 to-gray-800 p-4 shadow-lg">
         <div className="flex items-center justify-between max-w-md mx-auto">
           <div className="flex items-center gap-3">
             <div className="w-12 h-12 bg-gray-600 rounded-full flex items-center justify-center text-2xl shadow-lg">
-              🐹 a
+              🐹
             </div>
             <div>
               <div className="text-sm text-gray-400">Master Hamster</div>
@@ -59,33 +177,33 @@ export default function App() {
       {/* Tabs */}
       <div className="flex bg-gray-800 shadow-lg sticky top-0 z-10 border-b border-gray-700">
         <button
-          onClick={() => setActiveTab('main')}
+          onClick={() => setActiveTab("main")}
           className={`flex-1 py-4 font-bold transition-all ${
-            activeTab === 'main'
-              ? 'bg-gray-700 text-white border-b-2 border-yellow-400'
-              : 'text-gray-400'
+            activeTab === "main"
+              ? "bg-gray-700 text-white border-b-2 border-yellow-400"
+              : "text-gray-400"
           }`}
         >
           <div className="text-2xl mb-1">🐹</div>
           Main
         </button>
         <button
-          onClick={() => setActiveTab('upgrades')}
+          onClick={() => setActiveTab("upgrades")}
           className={`flex-1 py-4 font-bold transition-all ${
-            activeTab === 'upgrades'
-              ? 'bg-gray-700 text-white border-b-2 border-yellow-400'
-              : 'text-gray-400'
+            activeTab === "upgrades"
+              ? "bg-gray-700 text-white border-b-2 border-yellow-400"
+              : "text-gray-400"
           }`}
         >
           <TrendingUp className="w-5 h-5 mx-auto mb-1" />
           Upgrades
         </button>
         <button
-          onClick={() => setActiveTab('buffs')}
+          onClick={() => setActiveTab("buffs")}
           className={`flex-1 py-4 font-bold transition-all ${
-            activeTab === 'buffs'
-              ? 'bg-gray-700 text-white border-b-2 border-yellow-400'
-              : 'text-gray-400'
+            activeTab === "buffs"
+              ? "bg-gray-700 text-white border-b-2 border-yellow-400"
+              : "text-gray-400"
           }`}
         >
           <Zap className="w-5 h-5 mx-auto mb-1" />
@@ -95,7 +213,7 @@ export default function App() {
 
       <div className="max-w-md mx-auto p-4 pb-20">
         {/* Main Tab */}
-        {activeTab === 'main' && (
+        {activeTab === "main" && (
           <div className="flex flex-col items-center justify-center min-h-[70vh]">
             <div className="mb-8 text-center">
               <div className="text-6xl font-bold mb-2">45,230</div>
@@ -124,37 +242,37 @@ export default function App() {
         )}
 
         {/* Upgrades Tab */}
-        {activeTab === 'upgrades' && (
+        {activeTab === "upgrades" && (
           <div>
             <div className="flex gap-2 mb-4 overflow-x-auto pb-2">
               <button
-                onClick={() => setSelectedCategory('business')}
+                onClick={() => setSelectedCategory("business")}
                 className={`px-4 py-2 rounded-full font-bold whitespace-nowrap transition-all ${
-                  selectedCategory === 'business'
-                    ? 'bg-gray-600 text-white shadow-lg border-2 border-yellow-400'
-                    : 'bg-gray-800 text-gray-400 border border-gray-700'
+                  selectedCategory === "business"
+                    ? "bg-gray-600 text-white shadow-lg border-2 border-yellow-400"
+                    : "bg-gray-800 text-gray-400 border border-gray-700"
                 }`}
               >
                 <Target className="w-4 h-4 inline mr-1" />
                 Business
               </button>
               <button
-                onClick={() => setSelectedCategory('special')}
+                onClick={() => setSelectedCategory("special")}
                 className={`px-4 py-2 rounded-full font-bold whitespace-nowrap transition-all ${
-                  selectedCategory === 'special'
-                    ? 'bg-gray-600 text-white shadow-lg border-2 border-yellow-400'
-                    : 'bg-gray-800 text-gray-400 border border-gray-700'
+                  selectedCategory === "special"
+                    ? "bg-gray-600 text-white shadow-lg border-2 border-yellow-400"
+                    : "bg-gray-800 text-gray-400 border border-gray-700"
                 }`}
               >
                 <Star className="w-4 h-4 inline mr-1" />
                 Special
               </button>
               <button
-                onClick={() => setSelectedCategory('team')}
+                onClick={() => setSelectedCategory("team")}
                 className={`px-4 py-2 rounded-full font-bold whitespace-nowrap transition-all ${
-                  selectedCategory === 'team'
-                    ? 'bg-gray-600 text-white shadow-lg border-2 border-yellow-400'
-                    : 'bg-gray-800 text-gray-400 border border-gray-700'
+                  selectedCategory === "team"
+                    ? "bg-gray-600 text-white shadow-lg border-2 border-yellow-400"
+                    : "bg-gray-800 text-gray-400 border border-gray-700"
                 }`}
               >
                 <Users className="w-4 h-4 inline mr-1" />
@@ -174,12 +292,16 @@ export default function App() {
                     </div>
                     <div className="flex-1">
                       <div className="font-bold text-lg">{upgrade.name}</div>
-                      <div className="text-sm text-gray-400">Level {upgrade.level}</div>
+                      <div className="text-sm text-gray-400">
+                        Level {upgrade.level}
+                      </div>
                       <div className="flex items-center gap-2 mt-1">
                         <div className="text-yellow-400 font-bold">
                           <Coins className="w-4 h-4 inline" /> {upgrade.cost}
                         </div>
-                        <div className="text-green-400 text-sm">{upgrade.profit}</div>
+                        <div className="text-green-400 text-sm">
+                          {upgrade.profit}
+                        </div>
                       </div>
                     </div>
                     <ChevronRight className="w-6 h-6 text-gray-500" />
@@ -199,12 +321,14 @@ export default function App() {
         )}
 
         {/* Buffs Tab */}
-        {activeTab === 'buffs' && (
+        {activeTab === "buffs" && (
           <div>
             <div className="mb-4 bg-gray-800 rounded-2xl p-4 text-center border border-gray-700">
               <Trophy className="w-12 h-12 mx-auto mb-2 text-yellow-400" />
               <div className="font-bold text-lg">Power-Up Your Hamster!</div>
-              <div className="text-sm text-gray-400">Temporary boosts for maximum profit</div>
+              <div className="text-sm text-gray-400">
+                Temporary boosts for maximum profit
+              </div>
             </div>
 
             <div className="space-y-3">
@@ -213,14 +337,16 @@ export default function App() {
                   key={buff.id}
                   className={`rounded-2xl p-4 shadow-lg border ${
                     buff.active
-                      ? 'bg-gradient-to-r from-green-800 to-green-900 border-green-600'
-                      : 'bg-gradient-to-r from-gray-800 to-gray-900 border-gray-700'
+                      ? "bg-gradient-to-r from-green-800 to-green-900 border-green-600"
+                      : "bg-gradient-to-r from-gray-800 to-gray-900 border-gray-700"
                   }`}
                 >
                   <div className="flex items-center gap-3">
                     <div
                       className={`w-14 h-14 rounded-xl flex items-center justify-center text-3xl shadow-md border ${
-                        buff.active ? 'bg-yellow-400 border-yellow-500' : 'bg-gray-700 border-gray-600'
+                        buff.active
+                          ? "bg-yellow-400 border-yellow-500"
+                          : "bg-gray-700 border-gray-600"
                       }`}
                     >
                       {buff.icon}
@@ -234,7 +360,9 @@ export default function App() {
                           </span>
                         )}
                       </div>
-                      <div className="text-sm text-gray-400">Duration: {buff.duration}</div>
+                      <div className="text-sm text-gray-400">
+                        Duration: {buff.duration}
+                      </div>
                       <div className="flex items-center gap-3 mt-1">
                         <div className="text-yellow-400 font-bold text-sm">
                           <Coins className="w-4 h-4 inline" /> {buff.cost}
@@ -248,7 +376,10 @@ export default function App() {
                   </div>
                   {buff.active && (
                     <div className="mt-3 bg-gray-700 rounded-full h-2">
-                      <div className="bg-yellow-400 h-2 rounded-full" style={{ width: '65%' }} />
+                      <div
+                        className="bg-yellow-400 h-2 rounded-full"
+                        style={{ width: "65%" }}
+                      />
                     </div>
                   )}
                 </div>
@@ -257,7 +388,9 @@ export default function App() {
 
             <div className="mt-6 bg-gradient-to-r from-gray-700 to-gray-800 rounded-2xl p-4 text-center border border-gray-600">
               <div className="font-bold text-lg mb-2">🎁 Daily Bonus</div>
-              <div className="text-sm text-gray-400 mb-3">Claim your free boost!</div>
+              <div className="text-sm text-gray-400 mb-3">
+                Claim your free boost!
+              </div>
               <button className="bg-yellow-400 text-gray-900 font-bold py-2 px-6 rounded-full">
                 Claim Now
               </button>
